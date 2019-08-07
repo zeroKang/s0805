@@ -12,11 +12,19 @@ export default class Counter extends Component {
         }
     }
 
+    increase = (amount) => {
+        //alert("increase")
+        this.setState(
+            {count: this.state.count + amount}
+        )
+    }
+
     render(){
         return(
             <Fragment>
                 <h1>{this.state.count}</h1>
-                <CounterButton></CounterButton>
+                <CounterButton fn={this.increase} amount={1} text={"ADD"}></CounterButton>
+                <CounterButton fn={this.increase} amount={-1} text={"MINUS"}></CounterButton>
             </Fragment>
         )
     }
