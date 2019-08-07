@@ -13,7 +13,7 @@ const PageList = ({arr}) => {
 
     return (
         <ul>
-            {list+}
+            {list}
         </ul>
     )
 

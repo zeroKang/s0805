@@ -1,11 +1,9 @@
 import React from 'react'
 
-
 const TodoList = ({todos}) => {
 
     const list = todos.map( 
-        ({tno,title}) => 
-            <li key={tno}>{title}</li> 
+        ({tno,title}) => <li key={tno}>{title}</li> 
     )
 
     return(
