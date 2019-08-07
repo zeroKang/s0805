@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react'
 import CounterButton from './CounterButton';
+import CounterDisplay from './CounterDisplay';
 
 
 export default class Counter extends Component {
@@ -22,7 +23,7 @@ export default class Counter extends Component {
     render(){
         return(
             <Fragment>
-                <h1>{this.state.count}</h1>
+                <CounterDisplay count ={this.state.count}></CounterDisplay>
                 <CounterButton fn={this.increase} amount={1} text={"ADD"}></CounterButton>
                 <CounterButton fn={this.increase} amount={-1} text={"MINUS"}></CounterButton>
             </Fragment>

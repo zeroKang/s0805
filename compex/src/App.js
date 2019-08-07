@@ -2,7 +2,7 @@ import React from 'react';
 import Ex1 from './Ex1';
 import Ex2 from './Ex2';
 import Counter from './Counter';
-
+import Todo from './Todo';
 
 function App() {
 
@@ -25,6 +25,7 @@ function App() {
 
   return (
     <div>
+      <Todo></Todo>
       <Counter></Counter>
     </div>
   )
