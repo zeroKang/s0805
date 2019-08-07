@@ -1,6 +1,7 @@
 import React from 'react';
 import Ex1 from './Ex1';
 import Ex2 from './Ex2';
+import Counter from './Counter';
 
 
 function App() {
@@ -24,10 +25,7 @@ function App() {
 
   return (
     <div>
-    <Ex2></Ex2>  
-    <Ex1 arr={arr1}></Ex1>
-    <hr/>
-    <Ex1 arr={arr2}></Ex1>
+      <Counter></Counter>
     </div>
   )
 }
