@@ -4,21 +4,33 @@ import TodoInput from './TodoInput';
 
 export default class Todo extends Component{
 
-    static count = 3        
+    static count = 0        
 
     constructor(){
         super()        
         this.state = {
-            todos:[
-                {tno:1, title:'Todo1'},
-                {tno:2, title:'Todo2'},
-                {tno:3, title:'Todo3'},
-            ]
+            todos:[]
         }
     }
+
+    changeComplete = (tno) => {
+        
+        const target = this.state.todos.filter(obj => obj.tno === tno)[0]
+        const index = this.state.todos.indexOf(target)
+
+        const tempArr = this.state.todos
+
+        tempArr[index] = Object.assign(target, {complete: !target.complete})
+
+        console.log(tempArr)
+
+        this.setState({todos:tempArr})
+
+    }
+
     addTodo = (title) => {
         const arr = this.state.todos
-        arr.push({tno:++Todo.count,title:title})
+        arr.push({tno:++Todo.count,title:title, complete:false})
         this.setState(
             {todos:arr}
         )
@@ -29,7 +41,7 @@ export default class Todo extends Component{
             <div style={BackGround}>
                 <h1>Todo</h1>
                 <TodoInput add={this.addTodo}></TodoInput>
-                <TodoList todos={this.state.todos}></TodoList>
+                <TodoList todos={this.state.todos} change={this.changeComplete}></TodoList>
             </div>
         )
     }
