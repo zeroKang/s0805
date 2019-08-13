@@ -8,10 +8,10 @@ import lombok.AllArgsConstructor;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
-
 @RestController
 @RequestMapping("/todo/")
 @AllArgsConstructor
+
 public class TodoController  {
 
     private TodoRepository repo;
